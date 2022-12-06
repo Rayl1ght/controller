@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Ymagazin.Models.Client>
+@{
+    
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Универсальный компьютерный магазин</title>
+</head>
+<body>
+    <h3>Клиенты</h3>
+    <table>
+        <tr>
+            <td>ФИО клиента</td>
+            <td>Телефон</td>
+            <td></td>
+        </tr>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <td>@client.FIO_clienta</td>
+                <td>@client.Telefon_clienta</td>
+                <td><a href="~/Home/Buy/@client.Id">Показать заказы</a></td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
